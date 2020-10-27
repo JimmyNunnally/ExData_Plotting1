@@ -15,11 +15,12 @@ B <- A[A$Date %in% c("1/2/2007","2/2/2007"),]
 SetTime <-strptime(paste( B$Date,  B$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 B <- cbind(SetTime,  B)
 
-
-
+#Create/save plot 3
+png(file="plot3.png")
 columnlines <- c("black", "red", "blue")
 labels <- c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
 plot( B$SetTime,  B$Sub_metering_1, type="l", col=columnlines[1], xlab="", ylab="Energy sub metering")
 lines( B$SetTime,  B$Sub_metering_2, col=columnlines[2])
 lines( B$SetTime,  B$Sub_metering_3, col=columnlines[3])
 legend("topright", legend=labels, col=columnlines, lty="solid")
+dev.off()
