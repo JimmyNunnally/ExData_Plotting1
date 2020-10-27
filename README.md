@@ -1,3 +1,7 @@
+# Note for homewwork, I submitted code and pngs to main directory. You can compare my graphs to the original which are located in the "figures directory"
+
+
+
 ## Introduction
 
 This assignment uses data from
