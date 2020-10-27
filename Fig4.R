@@ -16,6 +16,7 @@ SetTime <-strptime(paste( B$Date,  B$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 B <- cbind(SetTime,  B)
 
 ## Plot 4
+png(file="plot4.png")
 labels <- c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
 columnlines <- c("black","red","blue")
 par(mfrow=c(2,2))
@@ -26,3 +27,4 @@ lines( B$SetTime,  B$Sub_metering_2, type="l", col="red")
 lines( B$SetTime,  B$Sub_metering_3, type="l", col="blue")
 legend("topright", bty="n", legend=labels, lty=1, col=columnlines)
 plot( B$SetTime,  B$Global_reactive_power, type="l", col="black", xlab="datetime", ylab="Global_reactive_power")
+dev.off()
